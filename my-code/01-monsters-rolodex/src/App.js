@@ -33,7 +33,8 @@ class App extends React.Component {
 
     return (
       <div>
-        <Search searchPhrase={this.state.search} onSearchPhraseChange={this.onSearchChange} />
+        <h1>Monsters Rolodex</h1>
+        <Search prompt="search monsters" searchPhrase={this.state.search} onSearchPhraseChange={this.onSearchChange} />
         <CardList monsters={filteredMonsters} />
       </div>
     );

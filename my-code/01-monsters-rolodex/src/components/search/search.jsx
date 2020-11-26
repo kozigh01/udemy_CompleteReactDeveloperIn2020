@@ -1,7 +1,7 @@
 import React from 'react';
 import './search.css';
 
-const Search = props => {
+const Search = ({ prompt, searchPhrase, onSearchPhraseChange}) => {
   return (
     <div className="search">
       <label htmlFor="search">
@@ -9,10 +9,9 @@ const Search = props => {
         <input 
           id="search"
           type="search" 
-          placeholder="search monsters" 
-          value={props.searchPhrase}
-          onChange={e => props.onSearchPhraseChange(e.target.value)}
-          // onChange={(event) => props.onSearchChange(event.value)}
+          placeholder={prompt} 
+          value={searchPhrase}
+          onChange={e => onSearchPhraseChange(e.target.value)}
         />
       </label>
     </div>
