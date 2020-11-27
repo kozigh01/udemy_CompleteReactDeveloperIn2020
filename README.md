@@ -20,3 +20,5 @@ Course: [udemy](https://www.udemy.com/course/complete-react-developer-zero-to-ma
   > unpkg.com/react@16.7.0/umd/react.production.min.js  
   > unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js  
 * Lifecycle methods diagram: [site](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+* React Libraries:
+  * React Router: [site](https://reactrouter.com/)
