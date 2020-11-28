@@ -1,7 +1,8 @@
 .Header {
   display: flex;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
   border-bottom: thin solid black;
 
   a {

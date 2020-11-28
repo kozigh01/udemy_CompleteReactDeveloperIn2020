@@ -22,3 +22,5 @@ Course: [udemy](https://www.udemy.com/course/complete-react-developer-zero-to-ma
 * Lifecycle methods diagram: [site](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 * React Libraries:
   * React Router: [site](https://reactrouter.com/)
+* React:
+  * Import image: [link](https://create-react-app.dev/docs/adding-images-fonts-and-files/)
