@@ -1,5 +1,13 @@
 .SigninPage {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space;
+  align-items: flex-start;
+
+  :first-child {
+    margin-right: 10px;
+  }
+
+  :last-child {
+    margin-left: 10px;
+  }
 }
