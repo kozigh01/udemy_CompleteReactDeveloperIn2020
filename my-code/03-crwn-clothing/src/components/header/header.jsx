@@ -6,9 +6,10 @@ import './header.scss';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { auth }  from '../../firebase/firebase-utils';
 import CartIcon from '../cart-icon/cart-icon';
+import CartDropdown from '../cart-dropdown/cart-dropdown';
 
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, hidden }) => {
   const authLink = currentUser 
     ? <a className="option" onClick={() => auth.signOut()}>sign out</a>
     : <Link to="/signin">sign in</Link>;
@@ -26,6 +27,7 @@ const Header = ({ currentUser }) => {
         {authLink}
         <CartIcon />
       </div>
+      { hidden ? null : <CartDropdown /> }
     </div>
   );
 };
