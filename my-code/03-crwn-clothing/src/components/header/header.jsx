@@ -5,6 +5,7 @@ import './header.scss';
 // import logo from '../../assets/crown.svg'
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { auth }  from '../../firebase/firebase-utils';
+import CartIcon from '../cart-icon/cart-icon';
 
 
 const Header = ({ currentUser }) => {
@@ -23,15 +24,17 @@ const Header = ({ currentUser }) => {
         <Link to="/shop">Shop</Link>
         <Link to="/contact">contact</Link>
         {authLink}
+        <CartIcon />
       </div>
     </div>
   );
 };
 
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => {
   return {
-    currentUser: state.user.currentUser
+    currentUser,
+    hidden
   }
 };
 
