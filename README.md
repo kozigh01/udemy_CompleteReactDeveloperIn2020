@@ -24,7 +24,7 @@ Course: [udemy](https://www.udemy.com/course/complete-react-developer-zero-to-ma
   * React Router: [site](https://reactrouter.com/)
 * React:
   * Import image: [link](https://create-react-app.dev/docs/adding-images-fonts-and-files/)
-* Redux: [site](https://redux.js.org/) | (chrome extension)[https://github.com/zalmoxisus/redux-devtools-extension#usage]
+* Redux: [site](https://redux.js.org/) | (chrome extension)[https://github.com/zalmoxisus/redux-devtools-extension#usage] | [redux-persist](https://www.npmjs.com/package/redux-persist)
 * Firebase: [site](https://firebase.google.com/) | [get started](https://firebase.google.com/docs/web/setup?authuser=0) | [npm](https://www.npmjs.com/package/firebase)
 * UTF-8 Wingdings: [w3schools](https://www.w3schools.com/charsets/ref_utf_dingbats.asp)
 * Emoji Unicode: [w3schools](https://www.w3schools.com/charsets/ref_emoji.asp)
