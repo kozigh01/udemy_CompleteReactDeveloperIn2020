@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 import './checkout-item.scss';
 
 // import { selectCartItems } from '../../redux/cart/cart.selectors';
+import { removeItem, incrementItemCount, decrementItemCount } from '../../redux/cart/cart.actions';
 
-const CheckoutItem = ({item}) => {
+const CheckoutItem = ({item, removeItem, incrementItemCount, decrementItemCount}) => {
   if (!item) { return null; }
 
   const { name, imageUrl, price, quantity } = item;
@@ -17,9 +18,13 @@ const CheckoutItem = ({item}) => {
         <img src={imageUrl} alt='item' />
       </div>
       <span className="name">{name}</span>
-      <span className="quantity">{quantity}</span>
+      <span className="quantity">
+        <div className="arrow" onClick={() => decrementItemCount(item)}>&#10094;</div>
+        <div className="value">{quantity}</div>        
+        <div className="arrow" onClick={() => incrementItemCount(item)}>&#10095;</div>
+      </span>
       <span className="price">{price}</span>
-      <div className="remove-button">&#10005;</div>
+      <div className="remove-button" onClick={() => removeItem(item)}>&#10005;</div>
     </div>
   );
 };
@@ -28,5 +33,11 @@ const CheckoutItem = ({item}) => {
 //   items: selectCartItems
 // });
 
-export default connect(null, null)(CheckoutItem);
+const mapDispatchToProps = dispatch => ({
+  removeItem: item => dispatch(removeItem(item)),
+  incrementItemCount: item => dispatch(incrementItemCount(item)),
+  decrementItemCount: item => dispatch(decrementItemCount(item))
+});
+
+export default connect(null, mapDispatchToProps)(CheckoutItem);
 
