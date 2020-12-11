@@ -29,3 +29,4 @@ Course: [udemy](https://www.udemy.com/course/complete-react-developer-zero-to-ma
 * Firebase: [site](https://firebase.google.com/) | [get started](https://firebase.google.com/docs/web/setup?authuser=0) | [npm](https://www.npmjs.com/package/firebase)
 * UTF-8 Wingdings: [w3schools](https://www.w3schools.com/charsets/ref_utf_dingbats.asp)
 * Emoji Unicode: [w3schools](https://www.w3schools.com/charsets/ref_emoji.asp)
+* Stripe (payment system): [site](https://stripe.com/) | [accept payment](https://stripe.com/docs/checkout/integration-builder) | [npm - react-stripe-checkou](https://www.npmjs.com/package/react-stripe-checkout)

@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { createStructuredSelector } from 'reselect';
 
 import './checkout-item.scss';
 
-// import { selectCartItems } from '../../redux/cart/cart.selectors';
 import { removeItem, incrementItemCount, decrementItemCount } from '../../redux/cart/cart.actions';
 
 const CheckoutItem = ({item, removeItem, incrementItemCount, decrementItemCount}) => {

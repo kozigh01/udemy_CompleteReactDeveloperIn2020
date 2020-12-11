@@ -4,6 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import './checkout-page.scss';
 
 import CheckoutItem from '../../components/checkout-item/checkout-item';
+import StripeCheckoutButton from '../../components/stripe-button/stripe-button';
 import { selectCartItems, selectorCartItemsTotal } from '../../redux/cart/cart.selectors';
 
 
@@ -35,6 +36,13 @@ class CheckOutPage extends React.Component {
         <div className="total">
           <span>Total: ${this.props.total}</span>
         </div>
+        
+        <div className="test-warning">
+          *Please use the following test credit card for payments* 
+          <br/>
+          4242 4242 4242 4242 - Exp: any date in future, cvv: any 3 digits
+        </div>
+        <StripeCheckoutButton price={this.props.total} />
       </div>
     );
   }
