@@ -5,6 +5,8 @@ import storage from 'redux-persist/es/storage'
 
 import userReducer from './user/user.reducer';
 import cartReducer from './cart/cart.reducer';
+import directoryReducer from './directory/directory.reducer';
+import shopReducer from './shop/shop.reducer';
 
 
 // root reducer
@@ -16,15 +18,18 @@ const persistConfig = {
 
 const rootReducer = combineReducers({ 
   user: userReducer,
-  cart: cartReducer 
+  cart: cartReducer,
+  directory: directoryReducer,
+  shop: shopReducer
 });
 
-const myPersistReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 
 // store
-const middlewares = [ logger ];
+// const middlewares = [ logger ];
+const middlewares = [];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export const store = createStore(myPersistReducer, composeEnhancers(applyMiddleware(...middlewares)));
+export const store = createStore(persistedReducer, composeEnhancers(applyMiddleware(...middlewares)));
 export const persistor = persistStore(store);

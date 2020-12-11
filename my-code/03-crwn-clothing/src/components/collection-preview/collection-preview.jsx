@@ -1,12 +1,13 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './collection-preview.scss';
 
 import CollectionItem from '../collection-item/collection-item';
 
-const CollectionPreview = ({ title, items }) => {
+const CollectionPreview = ({ title, routeName, items, history }) => {
   return (
     <div className="CollectionPreview">
-      <div className="title">{ title }</div>
+      <div className="title" onClick={() => history.push(`shop/${routeName}`)}>{ title }</div>
       <div className="collection-container">
         {
           items.slice(0, 4).map(item => (
@@ -21,4 +22,4 @@ const CollectionPreview = ({ title, items }) => {
   );
 };
 
-export default CollectionPreview;
+export default withRouter(CollectionPreview);
