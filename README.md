@@ -30,3 +30,5 @@ Course: [udemy](https://www.udemy.com/course/complete-react-developer-zero-to-ma
 * UTF-8 Wingdings: [w3schools](https://www.w3schools.com/charsets/ref_utf_dingbats.asp)
 * Emoji Unicode: [w3schools](https://www.w3schools.com/charsets/ref_emoji.asp)
 * Stripe (payment system): [site](https://stripe.com/) | [accept payment](https://stripe.com/docs/checkout/integration-builder) | [npm - react-stripe-checkou](https://www.npmjs.com/package/react-stripe-checkout)
+* Heroku: [site](https://www.heroku.com/) | [cli](https://devcenter.heroku.com/categories/command-line)
+* styled-components: [site](https://styled-components.com/)

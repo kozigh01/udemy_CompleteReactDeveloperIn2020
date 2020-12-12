@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import './header.scss';
-// import logo from '../../assets/crown.svg'
+
+import { HeaderContainer, MenuItemContainer } from './header.styles';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { auth }  from '../../firebase/firebase-utils';
 
@@ -15,24 +15,23 @@ import CartDropdown from '../cart-dropdown/cart-dropdown';
 
 const Header = ({ currentUser, hidden }) => {
   const authLink = currentUser 
-    ? <a className="option" onClick={() => auth.signOut()}>sign out</a>
+    ? <a href="/#" onClick={() => auth.signOut()}>sign out</a>
     : <Link to="/signin">sign in</Link>;
 
   return (
-    <div className="Header">
+    <HeaderContainer>
       <Link to="/">
-        {/* <img src={logo} alt="main logo" className="logo"/> */}
         <Logo />
       </Link>
 
-      <div className="menu-item-container">
-        <Link to="/shop">Shop</Link>
+      <MenuItemContainer>
+        <Link to="/shop">shop</Link>
         <Link to="/contact">contact</Link>
         {authLink}
         <CartIcon />
-      </div>
+      </MenuItemContainer>
       { hidden ? null : <CartDropdown /> }
-    </div>
+    </HeaderContainer>
   );
 };
 
