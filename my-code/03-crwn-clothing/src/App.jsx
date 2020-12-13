@@ -11,12 +11,16 @@ import Homepage from './pages/homepage/homepage';
 import ShopPage from './pages/shoppage/shop-page';
 import SigninPage from './pages/signin-page/signin-page';
 import CheckOutPage from './pages/checkout/checkout-page';
-import { auth, createUserProfileDocument } from './firebase/firebase-utils';
+import { auth, createUserProfileDocument, addCollectionAndDocuments } from './firebase/firebase-utils';
+import { selectCollectionsForPreview } from './redux/shop/shop.selector';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
+    // This was a one-time thing to add the shop data to the Firebase Firestore
+    // addCollectionAndDocuments('collections', this.props.shopData.map(({title, items}) => ({title, items})));
+
     const { setCurrentUser } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
@@ -55,7 +59,6 @@ class App extends React.Component {
             }
             />
           <Route path="/checkout" component={CheckOutPage} />
-          {/* <Route path="/signin" component={SigninPage} /> */}
         </Switch>
       </div>
     );
@@ -63,7 +66,8 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
+  // shopData: selectCollectionsForPreview
 });
 
 const mapDispatchToProps = dispatch => ({ 

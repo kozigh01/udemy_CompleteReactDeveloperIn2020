@@ -6,7 +6,6 @@ const StripeCheckoutButton = ({price}) => {
   const publishableKey = '';
 
   const onToken = token => {
-    console.log(token);
     alert('Payment Successful');
   };
 

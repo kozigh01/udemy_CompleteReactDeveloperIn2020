@@ -13,6 +13,12 @@ const config = {
   measurementId: "G-5MW6MHWEP7"
 };
 
+firebase.initializeApp(config);
+
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (userAuth) {
     const userRef = firestore.doc(`users/${userAuth.uid}`);
@@ -36,13 +42,41 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   }
 };
 
-firebase.initializeApp(config);
+export const convertCollectionSnapshotToMap = (collections) => {
+  const transformedCollection = collections.docs.map(doc => {
+    const { title, items } = doc.data();
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      title,
+      id: doc.id,
+      title,
+      items
+    };
+  });
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
+  return transformedCollection.reduce((acc, item) => {
+    acc[item.title.toLowerCase()] = item;
+    return acc;
+  }, {});
+};
 
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+  const collectionRef = firestore.collection(collectionKey);
+  const batch = firestore.batch();
+  
+  objectsToAdd.forEach(doc => {
+    const newDocRef = collectionRef.doc();
+    batch.set(newDocRef, doc);
+  });
+  
+  return await batch.commit();
+};
+
+
+// set-up Google signin
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
+
 
 export default firebase;
