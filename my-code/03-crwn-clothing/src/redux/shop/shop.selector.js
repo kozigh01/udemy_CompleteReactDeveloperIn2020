@@ -25,5 +25,7 @@ export const selectCollection = collectionUrlParam =>  createSelector(
 
 export const selectIsCollectionsLoaded = createSelector(
   [selectCollectionsForPreview],
-  collectionsMap => collectionsMap && collectionsMap.length > 0
+  collectionsMap => {
+    return collectionsMap && collectionsMap.length > 0;
+  }
 );

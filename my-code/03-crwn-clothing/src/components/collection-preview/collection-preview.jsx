@@ -4,7 +4,8 @@ import './collection-preview.scss';
 
 import CollectionItem from '../collection-item/collection-item';
 
-const CollectionPreview = ({ title, routeName, items, history }) => {
+const CollectionPreview = props => {
+  const { title, routeName, items, history } = props;
   return (
     <div className="CollectionPreview">
       <div className="title" onClick={() => history.push(`shop/${routeName}`)}>{ title }</div>
