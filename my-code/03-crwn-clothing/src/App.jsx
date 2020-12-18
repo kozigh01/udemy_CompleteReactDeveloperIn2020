@@ -12,7 +12,6 @@ import ShopPage from './pages/shoppage/shop-page';
 import SigninPage from './pages/signin-page/signin-page';
 import CheckOutPage from './pages/checkout/checkout-page';
 import { auth, createUserProfileDocument, addCollectionAndDocuments } from './firebase/firebase-utils';
-import { selectCollectionsForPreview } from './redux/shop/shop.selector';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
